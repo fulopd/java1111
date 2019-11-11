@@ -1,14 +1,27 @@
+import java.util.Random;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Ember e1 = new Ember("Kiss", "Béla", 11);
+		Ember[] emberek = new Ember[10];
+		String[] vezetekNevek = {"Szabó", "Nagy", "Gipsz", 
+								 "Fekete", "Szilágyi", "Majoros", 
+								 "Keve", "Lakatos", "Orsós",
+								 "Takács"};
+		String[] keresztNevek = {"Ádám","Éva","Béla","József","Szilvi",
+							   "Andi","Áron","Boglárka","Zoltán","Ágnes"};
+		Random rnd = new Random();
 		
-		e1.setEletkor(35);
 		
-		System.out.println(e1);
+		for (int i = 0; i < emberek.length; i++) {
+			emberek[i] = new Ember(vezetekNevek[rnd.nextInt(10)],
+								   keresztNevek[rnd.nextInt(10)], 
+								   rnd.nextInt(100)+1
+								   );
+			System.out.println(emberek[i]);
+		}
+		
 		
 		
 	}
